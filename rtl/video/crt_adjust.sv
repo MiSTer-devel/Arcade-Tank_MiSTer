@@ -334,6 +334,10 @@ module crt_adjust #(
     // read sta ancora emettendo l'ultima riga attiva -> ultima riga mangiata.
     // Campiono vb_in una volta per riga (hs_rise) e lo ritardo di 1 riga cosi`
     // vb_active si allinea a cio` che il read sta effettivamente emettendo.
+    // (Tank: VBlank changes at the line wrap and HSync, hcount 32..63, comes
+    //  before the picture, hcount 128..901, so the bank read in line L holds
+    //  line L-1 and this one-line-late gate matches it.  Gating on vb_in
+    //  instead adds a stale top line and drops the bottom one.)
     reg vb_line, vb_active;
     initial begin vb_line = 0; vb_active = 0; end
     always @(posedge clk) if (hs_rise_in) begin

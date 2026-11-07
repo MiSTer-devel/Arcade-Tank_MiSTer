@@ -28,7 +28,8 @@ All three run on the same bitstream.
 
 ## Installing
 
-1. Copy `releases/Tank_<date>.rbf` to `/media/fat/_Arcade/cores/`.
+1. Copy `releases/Arcade-Tank_<date>.rbf` to `/media/fat/_Arcade/cores/` and
+   rename it `Tank_<date>.rbf`, as the MiSTer distribution does.
 2. Copy `releases/Tank.mra` and `releases/Tank II.mra` to
    `/media/fat/_Arcade/`. For the cocktail table, also copy the
    `releases/_alternatives/_Tank` folder to `/media/fat/_Arcade/_alternatives/`.
@@ -169,7 +170,7 @@ You need Quartus Prime **17.0.2** (Lite or Standard), as for all MiSTer cores.
 
 1. Open `Tank.qpf`, or run `quartus_sh --flow compile Tank` in this folder.
 2. The bitstream is `output_files/Tank.rbf`. For a release, copy it to
-   `releases/Tank_YYYYMMDD.rbf`.
+   `releases/Arcade-Tank_YYYYMMDD.rbf`.
 
 The framework writes the build date into the bitstream, so a build made on
 another day differs from the release in those bytes only.
